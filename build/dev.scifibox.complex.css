@@ -1,0 +1,115 @@
+
+/*library skeleton*/
+.scifi_box{-moz-box-sizing:border-box;box-sizing:border-box;position:relative;}
+.scifi_box>.corner{-moz-box-sizing:content-box;box-sizing:content-box;
+position:absolute;width:100%;height:100%;left:50%;top:50%;z-index:0;
+-webkit-transform:translateX(-50%)translateX(-.5px)translateY(-50%);
+        transform:translateX(-50%)translateX(-.5px)translateY(-50%);}
+.scifi_box>.corner>div           {position:absolute;
+-moz-box-sizing:content-box;box-sizing:content-box;}
+.scifi_box>.corner>div::before  {position:absolute;}
+.scifi_box>.corner>div::after   {position:absolute;}
+.scifi_box>.corner>.top   {bottom:100%;}
+.scifi_box>.corner>.left  {right :100%;}
+.scifi_box>.corner>.bottom{top   :100%;}
+.scifi_box>.corner>.right {left  :100%;}
+.scifi_box>.content{position:absolute;width:100%;height:100%;z-index:1;}
+/*node skeleton*/
+.scifi_box.node{border-style:solid;border-width:1px;}
+.scifi_box.node>.corner>div{width:1px;height:1px;border-radius:50%;}
+/*.scifi_box.node>.corner{padding:10px;}*/
+/*node theme*/
+.scifi_box.node.light{
+background-color:rgba(255,255,255,.04);
+border-color:rgba(255,255,255,.1);
+}
+.scifi_box.node.light>.corner>div{background:white;}
+
+.scifi_box.node.dark{
+background-color:rgba(0,0,0,.07);
+border-color:rgba(0,0,0,.1);
+}
+.scifi_box.node.dark>.corner>div{background:black;}
+
+/*edge skeleton*/
+.scifi_box.edge{border-style:solid;border-width:1px;}
+.scifi_box.edge>.corner>div{width:5px;height:5px;border-width:1px;}
+
+.scifi_box.edge.inner>.corner>.top.left    {right:initial;left:0;border-bottom-style:solid;}
+.scifi_box.edge.inner>.corner>.top.right   {bottom:initial;top:0;border-left-style  :solid;}
+.scifi_box.edge.inner>.corner>.bottom.left {top:initial;bottom:0;border-right-style :solid;}
+.scifi_box.edge.inner>.corner>.bottom.right{left:initial;right:0;border-top-style   :solid;}
+.scifi_box.edge.inner>.corner>div::before{content:'';
+width:inherit;height:inherit;border-style:inherit;border-width:inherit;border-color:inherit;
+-webkit-transform:rotate(-90deg);transform:rotate(-90deg);
+}
+.scifi_box.edge.inner>.corner>.top.left::before{top:0;right:100%;
+-webkit-transform-origin:100% 100%;transform-origin:100% 100%;
+}
+.scifi_box.edge.inner>.corner>.top.right::before{right:0;bottom:100%;
+-webkit-transform-origin:0% 100%;transform-origin:0% 100%;
+}
+.scifi_box.edge.inner>.corner>.bottom.left::before{left:0;top:100%;
+-webkit-transform-origin:100% 0%;transform-origin:100% 0%;
+}
+.scifi_box.edge.inner>.corner>.bottom.right::before{bottom:0;left:100%;
+-webkit-transform-origin:0% 0%;transform-origin:0% 0%;
+}
+.scifi_box.edge.inner>.corner>div::after{content:'';
+width:inherit;height:inherit;border-style:inherit;border-width:inherit;border-color:inherit;
+-webkit-transform:rotate(-90deg);transform:rotate(-90deg);
+}
+.scifi_box.edge.inner>.corner>.top.left::after{bottom:0;right:100%;
+-webkit-transform-origin:100% 100%;transform-origin:100% 100%;
+}
+.scifi_box.edge.inner>.corner>.top.right::after{left:0;bottom:100%;
+-webkit-transform-origin:0% 100%;transform-origin:0% 100%;
+}
+.scifi_box.edge.inner>.corner>.bottom.left::after{right:0;top:100%;
+-webkit-transform-origin:100% 0%;transform-origin:100% 0%;
+}
+.scifi_box.edge.inner>.corner>.bottom.right::after{top:0;left:100%;
+-webkit-transform-origin:0% 0%;transform-origin:0% 0%;
+}
+
+.scifi_box.edge.outer>.corner>.top   {border-bottom-style:solid;}
+.scifi_box.edge.outer>.corner>.left  {border-right-style :solid;}
+.scifi_box.edge.outer>.corner>.bottom{border-top-style   :solid;}
+.scifi_box.edge.outer>.corner>.right {border-left-style  :solid;}
+
+.scifi_box.edge.cross>.corner>.top   {border-bottom-style:solid;}
+.scifi_box.edge.cross>.corner>.left  {border-right-style :solid;}
+.scifi_box.edge.cross>.corner>.bottom{border-top-style   :solid;}
+.scifi_box.edge.cross>.corner>.right {border-left-style  :solid;}
+.scifi_box.edge.cross>.corner>div::before{content:'';
+width:inherit;height:inherit;border-style:inherit;border-width:inherit;border-color:inherit;
+-webkit-transform:rotate(180deg);transform:rotate(180deg);
+}
+.scifi_box.edge.cross>.corner>.top.left::before{right:0;bottom:0;
+-webkit-transform-origin:100% 100%;transform-origin:100% 100%;
+}
+.scifi_box.edge.cross>.corner>.top.right::before{left:0;bottom:0;
+-webkit-transform-origin:0% 100%;transform-origin:0% 100%;
+}
+.scifi_box.edge.cross>.corner>.bottom.left::before{right:0;top:0;
+-webkit-transform-origin:100% 0%;transform-origin:100% 0%;
+}
+.scifi_box.edge.cross>.corner>.bottom.right::before{left:0;top:0;
+-webkit-transform-origin:0% 0%;transform-origin:0% 0%;
+}
+
+
+
+
+/*edge theme*/
+.scifi_box.edge.light{
+background-color:rgba(255,255,255,.04);
+border-color:rgba(255,255,255,.1);
+}
+.scifi_box.edge.light>.corner>div{border-color:white;}
+
+.scifi_box.edge.dark{
+background-color:rgba(0,0,0,.07);
+border-color:rgba(0,0,0,.1);
+}
+.scifi_box.edge.dark>.corner>div{border-color:black;}
